@@ -6,6 +6,7 @@ import com.jayway.jsonpath.JsonPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -26,6 +27,7 @@ public class OpenWeatherMapClient {
         this.restTemplate = builder.build();
     }
 
+    @Cacheable("weatherByCityId")
     public Weather fetchWeatherByCityId(String id) {
         // TODO: handle errors from calling API? Like 401 - Unauthorized ?
         ResponseEntity<String> weatherData = this.restTemplate
