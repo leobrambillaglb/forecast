@@ -14,12 +14,22 @@ The site will display:
 
 The styling of the website is not relevant on this first version
 
-Work plan:
+## Implementation
+
+### Work plan
 1. Create the base project files with Maven configuration and a simple Spring Boot app exposing a Welcome page
 2. Add a Rest Controller that will return the weather data for a given city (first version can return mock data)
 3. Create an OpenWeatherMap API client and connect it to the Weather controller. It will require logic to map the response from OWM to the Weather view object.
 4. Add caching to reduce the calls to OWM service, there are recommendations about the data update frequency.
 5. The Forecast app will provide a regular HTML page return to render the Weather data and also a REST kind endpoint to get the data in JSON format.
+
+### Issues
+
+Some issues that need to be tackled when implementing this app
+* Display the date and time in the proper time zone. (normally Java formatter default to local-to server- timezone)
+* Convert Kelvin to Fahrenheit and Celsius (used functions from Wikipedia)
+* Implement the full set of objects to represent the data from OWM or just a minimal customized object to collect the required data.
+
 
 ## Setup
 
@@ -59,3 +69,4 @@ java -jar something..
 ## Links
 
 * OpenWeatherMap.org - https://openweathermap.org 
+* About Kelvin degrees -  https://en.wikipedia.org/wiki/Kelvin
