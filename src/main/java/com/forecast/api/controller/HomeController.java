@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.websocket.server.PathParam;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Main site controller to handle user request while browsing the site.
@@ -41,26 +42,11 @@ public class HomeController {
         return "forecast";
     }
 
-    /* Just left his here for testing */
-    @GetMapping(value = "/mockWeather")
-    public String mockWeather(Model model) {
-        WeatherView weatherView = WeatherView.WeatherViewBuilder.aWeatherView()
-                .withDate("Jul 28th")
-                .withCityName("North Vancouver")
-                .withOverallDescription("Sunny")
-                .withTempC("26")
-                .withTempF("86")
-                .withSunrise("5:15am")
-                .withSunset("9:20pm")
-                .build();
-        model.addAttribute("weatherView", weatherView);
-        return "forecast";
-    }
-
-    // FIXME the current time might be localized but the Sunrise and Sunset have more meaning in the same city's timezone
+    // The use of timeZone as it is works partially, for Hong Kong country code (HK) it does not get the proper timezone
     private WeatherView buildFromWeather(Weather weather) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm (z)");
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a (z)");
+        timeFormat.setTimeZone(TimeZone.getTimeZone(weather.getCountryCode()));
         WeatherView view = WeatherView.WeatherViewBuilder.aWeatherView()
                 .withDate(dateFormat.format(new Date(weather.getDate() * 1000L)))
                 .withCityName(weather.getCityName())

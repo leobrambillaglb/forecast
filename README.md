@@ -30,9 +30,18 @@ Some issues that need to be tackled when implementing this app
 * Convert Kelvin to Fahrenheit and Celsius (used functions from Wikipedia)
 * Implement the full set of objects to represent the data from OWM or just a minimal customized object to collect the required data.
 
+### TO DO
+* Add error handling in the OpenWeatherMapClient. Errors: service not avail, time out, not authorized, unknown cityId, etc
 
 ## Setup
+### Source code
+Managed with git at Github: https://github.com/leobrambillaglb/forecast
 
+Branches
+* master : contains the latest "ready to ship" version of the code
+* dev : contains the latest "reviewed" code, once the code runs all integration tests should be merged into _master_
+* rc# : release candidates branches. These are "cut" from master.
+ 
 ### Configurations
 
 #### Maven 3
@@ -70,3 +79,4 @@ java -jar something..
 
 * OpenWeatherMap.org - https://openweathermap.org 
 * About Kelvin degrees -  https://en.wikipedia.org/wiki/Kelvin
+* Epoch, Unix time - https://en.wikipedia.org/wiki/Unix_time

@@ -15,6 +15,7 @@ public class Weather {
 
     private long date;
     private String cityName;
+    private String countryCode;
     private String description;
     private double tempKelvin;
     private double tempCelsius;
@@ -33,9 +34,11 @@ public class Weather {
      * @param sunrise sunrise time expressed in Unix Epoch value
      * @param sunset sunset time expressed in Unix Epoch value
      */
-    public Weather(long date, String cityName, String description, double tempKelvin, long sunrise, long sunset) {
+    public Weather(long date, String cityName, String countryCode, String description, double tempKelvin,
+                   long sunrise, long sunset) {
         this.date = date;
         this.cityName = cityName;
+        this.countryCode = countryCode;
         this.description = description;
         this.tempKelvin = tempKelvin;
         this.tempFahrenheit = fahrenheitFromKelvin(tempKelvin);
@@ -64,6 +67,7 @@ public class Weather {
         return "Weather{" +
                 "date=" + date +
                 ", cityName='" + cityName + '\'' +
+                ", countryCode='" + countryCode + '\'' +
                 ", description='" + description + '\'' +
                 ", tempKelvin=" + tempKelvin +
                 ", tempCelsius=" + tempCelsius +
@@ -73,7 +77,7 @@ public class Weather {
                 '}';
     }
 
-/*
+    /*
     @JsonIgnore is used to skip a getter and not include it into the auto generated JSON.
     @JsonProperty is used here to explicitly define a name for the attribute when is set into the JSON output.
     By default the JSON object will pick up the property if there is no Ignore or Property annotation and will
@@ -89,6 +93,11 @@ public class Weather {
     // by default cityName will be used as the JSON attribute name
     public String getCityName() {
         return cityName;
+    }
+
+    @JsonProperty("countryCode")
+    public String getCountryCode() {
+        return countryCode;
     }
 
     @JsonProperty("overallDescription")
