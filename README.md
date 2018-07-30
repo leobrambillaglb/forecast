@@ -67,6 +67,12 @@ Download it from the [Official Java 8 site](http://www.oracle.com/technetwork/ja
 
 ### Deploy and run
 
+When started, the App will run by default with an embedded Tomcat server on port 8080.
+i.e. to access the app in your local environment, start the app and in your browser go to
+```
+http://localhost:8080
+```
+
 **Development**
 
 From the project's root dir:
