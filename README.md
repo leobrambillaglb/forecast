@@ -32,6 +32,11 @@ Some issues that need to be tackled when implementing this app
 
 ### TO DO
 * Add error handling in the OpenWeatherMapClient. Errors: service not avail, time out, not authorized, unknown cityId, etc
+* Add Unit and Integration testing
+* Fix the issue with the TimeZone used to format the Sunrise and Sunset times relative to the City requested.
+* Provide an easy way to add new Cities to the App. (a small CRUD for a City object can be easily added)
+* Improve logging
+* Add monitoring for metrics about OWM client usage
 
 ## Setup
 ### Source code
@@ -55,6 +60,10 @@ Ref to tool: https://github.com/takari/maven-wrapper
 
 #### Java 8
 To build and run this project, Java 8 is required.
+
+Most of the current Operating System distributions have the Java JRE installed already.
+
+Download it from the [Official Java 8 site](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 
 ### Deploy and run
 
