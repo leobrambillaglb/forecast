@@ -34,7 +34,7 @@ Some issues that need to be tackled when implementing this app
 * Add error handling in the OpenWeatherMapClient. Errors: service not avail, time out, not authorized, unknown cityId, etc
 * Add Unit and Integration testing
 * Fix the issue with the TimeZone used to format the Sunrise and Sunset times relative to the City requested.
-* Provide an easy way to add new Cities to the App. (a small CRUD for a City object can be easily added)
+* Provide an easy way to add new Cities to the App. (a full list of cities can be downloaded from OWM [here](http://bulk.openweathermap.org/sample/))
 * Improve logging
 * Add monitoring for metrics about OWM client usage
 
