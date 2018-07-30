@@ -77,12 +77,17 @@ From the project's root dir:
 **Production**
 
 _Build_
-
-mvn package ...
+```
+>$ ./mvnw package
+```
+this will generate an _api-0.0.1-SNAPSHOT.jar_ file in the ./target directory
 
 _Run_
 
-java -jar something..
+The packaged jar file can be copied to another directory or simply run from there with the following command
+```
+>$ java -jar target/api-0.0.1-SNAPSHOT.jar
+```
 
 ## Links
 
