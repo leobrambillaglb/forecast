@@ -102,3 +102,6 @@ The packaged jar file can be copied to another directory or simply run from ther
 * Epoch, Unix time - https://en.wikipedia.org/wiki/Unix_time
 * Spring Boot Caching - https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-caching.html
 * Caffeine cache - https://github.com/ben-manes/caffeine
+
+## Versions and changes
+This project follows [Keep a Changelog](https://keepachangelog.com) and [Semantic Versioning](https://semver.org)
